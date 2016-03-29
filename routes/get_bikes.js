@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/nodejsdb');
+mongoose.connect('mongodb://aravind:aravind123@ds059125.mongolab.com:59125/heroku_xqxl2mcv');
 
 
 var bikesSchema = mongoose.Schema({
