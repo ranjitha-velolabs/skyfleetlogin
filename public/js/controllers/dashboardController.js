@@ -3,7 +3,24 @@
 app.controller('dashboardController', ['$scope', '$timeout', function ($scope, $timeout) {
 
 
+$scope.session = function () {
+       console.log("hell");
+       if(sessionservice.getCookieData() != undefined)
+       {
+           //$rootScope.dis = true;
+           console.log("hell");
+           $location.path('/Dashboard');
+       }
+       else
+       {
+           //$rootScope.dis = false;
+           /!​*$scope.setflag(1);*​!/
+           $location.path('/login');
+       }
 
+   }
+
+   $scope.session();
         $('.date-input').datepicker({
             autoclose: true,
             startDate: new Date(),
