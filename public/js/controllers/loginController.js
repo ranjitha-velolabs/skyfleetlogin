@@ -37,6 +37,7 @@ angular.module('frontEndBackendTest.controllers')
                 }
 
             }
+
             $rootScope.desc = "Don't have an account?";
             $rootScope.btnq = "Sign Up";
             $rootScope.sref = "register";
@@ -98,6 +99,19 @@ angular.module('frontEndBackendTest.controllers')
 
             };
             }
+
+            $scope.logout = function () {
+
+                // call logout from service
+                AuthService.logout()
+                    .then(function () {
+                        console.log("clear");
+                        sessionservice.clearCookieData();
+                        $location.path('/login');
+                    });
+
+            };
+
 
 
         }])

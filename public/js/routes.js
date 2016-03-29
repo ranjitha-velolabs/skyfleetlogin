@@ -8,6 +8,21 @@ angular.module('frontEndBackendTest', ['ui.router','frontEndBackendTest.controll
             function($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
+                $rootScope.$on('$routeChangeStart', function (event) {
+
+                   /* if(sessionservice.getCookieData() != undefined)
+                    {
+                        console.log("routechanged");
+                        $rootScope.tabs = true;
+                        $rootScope.Name = sessionservice.getCookieData();
+                        console.log($rootScope.Name);
+                        $location.path('/Dashboard');
+                    }
+                    else {
+                        console.log('ALLOW');
+                        $location.path('/login');
+                    }*/
+                });
             }
         ])
     .config(function ($mdThemingProvider) {
@@ -34,27 +49,27 @@ angular.module('frontEndBackendTest', ['ui.router','frontEndBackendTest.controll
                  app.constant = $provide.constant;
                  app.value = $provide.value;*/
 
-                $urlRouterProvider.otherwise('/Dashboard');
+                $urlRouterProvider.otherwise('/login');
                 $stateProvider
                     .state('homepage', {
                         url: '/homepage',
                         templateUrl: '../html/homepage.html',
-                        controller:'homepageController'
+                        controller: 'homepageController'
                     })
                     .state('insert', {
                         url: '/insert',
                         templateUrl: '../html/insert.html',
-                        controller:'insertController'
+                        controller: 'insertController'
                     })
                     .state('update', {
                         url: '/update?bike_id',
                         templateUrl: '../html/update.html',
-                        controller:'updateController'
+                        controller: 'updateController'
                     })
                     .state('list', {
                         url: '/list',
                         templateUrl: '../html/list.html',
-                        controller:'listController'
+                        controller: 'listController'
                     })
                     .state('dashboard', {
                         url: '/Dashboard',
@@ -66,46 +81,46 @@ angular.module('frontEndBackendTest', ['ui.router','frontEndBackendTest.controll
                     .state('analytics', {
                         url: '/Analytics',
                         templateUrl: '../html/analytics.html',
-                         controller:'analyticsTabController'
+                        controller: 'analyticsTabController'
                     })
 
-                     .state('analytics.tripExplorer', {
-                         url: '/TripExplorer',
-                         templateUrl: '../html/tripexplorer.html',
-                         controller: 'tripExplorerController'
-                     })
-                     .state('analytics.trendsAndPatterns', {
-                         url: '/TrendsAndPatterns',
-                         templateUrl: '../html/trendsandPatterns.html',
-                         controller: 'trendsAndPatternsController'
-                     })
+                    .state('analytics.tripExplorer', {
+                        url: '/TripExplorer',
+                        templateUrl: '../html/tripexplorer.html',
+                        controller: 'tripExplorerController'
+                    })
+                    .state('analytics.trendsAndPatterns', {
+                        url: '/TrendsAndPatterns',
+                        templateUrl: '../html/trendsandPatterns.html',
+                        controller: 'trendsAndPatternsController'
+                    })
 
-                     .state('analytics.geofenceZones', {
-                         url: '/geofenceZones',
-                         templateUrl: '../html/geofence.html'
-                     })
+                    .state('analytics.geofenceZones', {
+                        url: '/geofenceZones',
+                        templateUrl: '../html/geofence.html'
+                    })
 
-                     .state('analytics.trendsAndPatterns.appAreas', {
-                         url: '/appAreas',
-                         templateUrl: '../html/list.html',
-                         controller: 'listController'
-                     })
-                     .state('analytics.trendsAndPatterns.rentalSupply', {
-                         url: '/rentalSupply',
-                         templateUrl: '../html/rentalSupply.html',
-                         controller: 'rentalSupplyController'
-                     })
-                     .state('analytics.trendsAndPatterns.rentalDemand', {
-                         url: '/rentalDemand',
-                         templateUrl: '../html/rentalDemand.html',
-                     })
+                    .state('analytics.trendsAndPatterns.appAreas', {
+                        url: '/appAreas',
+                        templateUrl: '../html/list.html',
+                        controller: 'listController'
+                    })
+                    .state('analytics.trendsAndPatterns.rentalSupply', {
+                        url: '/rentalSupply',
+                        templateUrl: '../html/rentalSupply.html',
+                        controller: 'rentalSupplyController'
+                    })
+                    .state('analytics.trendsAndPatterns.rentalDemand', {
+                        url: '/rentalDemand',
+                        templateUrl: '../html/rentalDemand.html',
+                    })
                     .state('analytics.trendsAndPatterns.unmetDemand', {
-                         url: '/unmetDemand',
-                         templateUrl: '../html/unmetDemand.html',
-                     })
+                        url: '/unmetDemand',
+                        templateUrl: '../html/unmetDemand.html',
+                    })
                     .state('analytics.trendsAndPatterns.bikeInVersusOut', {
-                         url: '/unmetDemand',
-                         templateUrl: '../html/bikeInVersusOut.html',
+                        url: '/unmetDemand',
+                        templateUrl: '../html/bikeInVersusOut.html',
                     })
                     .state('login', {
                         url: '/login',
@@ -118,9 +133,6 @@ angular.module('frontEndBackendTest', ['ui.router','frontEndBackendTest.controll
                         templateUrl: '../html/profile.html',
                         controller: 'profileController',
                         access: {restricted: true}
-                    }).state('logout', {
-                        url: '/logout',
-                        controller: 'logoutController'
                     })
                     .state('register', {
                         url: '/register',
@@ -147,16 +159,30 @@ angular.module('frontEndBackendTest', ['ui.router','frontEndBackendTest.controll
                 //      controller: "analyticsTabController"
                 //  })
             }]).run(
-    ['$rootScope','$location', '$route', 'AuthService',
-        function($rootScope, $location, $route, AuthService) {
+    ['$rootScope','$location', '$route',
+        function($rootScope, $location, $route) {
             $rootScope.$on('$routeChangeStart',
                 function (event, next, current) {
-                    AuthService.getUserStatus();
+
+                    if(sessionservice.getCookieData() != undefined)
+                    {
+                        console.log("routechanged");
+                        $rootScope.tabs = true;
+                        $rootScope.Name = sessionservice.getCookieData();
+                        console.log($rootScope.Name);
+                        $location.path('/Dashboard');
+                    }
+                    else {
+                        $location.path('/login');
+                    }
+
+
+                    /*AuthService.getUserStatus();
                     if (next.access.restricted &&
                         !AuthService.isLoggedIn()) {
                         $location.path('/login');
                         $route.reload();
-                    }
+                    }*/
                 });
         }
     ]);

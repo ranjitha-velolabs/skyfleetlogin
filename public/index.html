@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -147,7 +147,7 @@
             <md-button style="color: #585858;" class="md-button md-ink-ripple dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="ng-scope">{{Name}}</span><div class="md-ripple-container"></div>
             </md-button>
-            <ul style="background-color: #526C87;" class="dropdown-menu" aria-labelledby="dropdownMenu2"  ng-show="tabs" ng-controller="logoutController">
+            <ul style="background-color: #526C87;" class="dropdown-menu" aria-labelledby="dropdownMenu2"  ng-show="tabs">
                 <li><a href="/#/logout" ng-click="logout()">Log out</a></li>
                 <li><a href="">Settings</a></li>
                 <li><a href="">Contact Form</a></li>
@@ -166,12 +166,5 @@
 
 
 <div ui-view></div>
-<md-content>
-    <md-toolbar style="background-color: #526C87">
-        <div class="md-toolbar-tools">
-            <img style="margin-top: 15px;" class = "logo" src="../images/velo_footer.png"><p style="margin-top:25px; font-family: ProximanovaThin; color: #9B9B9B; font-size: 28px;">SKYLOCK FLEET</p>
-        </div>
-    </md-toolbar>
-</md-content>
 </body>
 </html>
