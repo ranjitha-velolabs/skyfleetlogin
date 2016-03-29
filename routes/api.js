@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var request = require('request');
+var mongoose = require('mongoose');
 var LocalStrategy = require('passport-local' ).Strategy;
 var account = require('../public/models/session.js');
 
@@ -10,6 +11,9 @@ var account = require('../public/models/session.js');
 // =========================================================================
 // we are using named strategies since we have one for login and one for signup
 // by default, if there was no name, it would just be called 'local'
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function(){
 passport.serializeUser(function(user, done) {
     console.log("hellllllooo");
     done(null, user._id);
@@ -362,6 +366,6 @@ router.get('/status', function(req, res) {
         status: true
     });
 });*/
-
+});
 
 module.exports = router;
