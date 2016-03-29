@@ -4,7 +4,7 @@ var passport = require('passport');
 var request = require('request');
 var mongoose = require('mongoose');
 var LocalStrategy = require('passport-local' ).Strategy;
-var account = require('../public/models/session.js');
+var accounts = require('../public/models/session.js');
 
 // =========================================================================
 // LOCAL SIGNUP ============================================================
@@ -14,6 +14,7 @@ var account = require('../public/models/session.js');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
+    console.log("Auth Connected");
 passport.serializeUser(function(user, done) {
     console.log("hellllllooo");
     done(null, user._id);
@@ -21,7 +22,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     console.log("hellllllo");
-    account.findById(id, function(err, user) {
+    accounts.findById(id, function(err, user) {
         console.log("hellllllo");
         done(err, user);
     });
@@ -32,7 +33,7 @@ passport.use('register', new LocalStrategy({
     function(req, username, password, done) {
         findOrCreateUser = function(){
             // find a user in Mongo with provided username
-            account.findOne({'username':username},function(err, user) {
+            accounts.findOne({'username':username},function(err, user) {
                 // In case of any error return
                 if (err){
                     console.log('Error in SignUp: '+err);
@@ -45,7 +46,7 @@ passport.use('register', new LocalStrategy({
                 } else {
                     // if there is no user with that email
                     // create the user
-                    var newUser = new account();
+                    var newUser = new accounts();
                     // set the user's local credentials
                     newUser.username = username;
                     newUser.password = newUser.generateHash(password);
@@ -142,7 +143,7 @@ passport.use('login', new LocalStrategy({
         // check in mongo if a user with username exists or not
         console.log(req.body);
         console.log(password);
-        account.findOne({ 'email' :  email },
+        accounts.findOne({ 'email' :  email },
             function(err, user) {
                 // In case of any error, return using the done method
                 if (err)
@@ -153,7 +154,7 @@ passport.use('login', new LocalStrategy({
                     return done(null, false);
                 }
                 // User exists but wrong password, log the error
-                if (!new account().validPassword(user, password)){
+                if (!new accounts().validPassword(user, password)){
                     console.log('Invalid Password');
                     return done(null, false); // redirect back to login page
                 }

@@ -18,4 +18,4 @@ Account.methods.validPassword = function(user,password) {
     return bcrypt.compareSync(password,user.password);
 };
 // create the model for users and expose it to our app
-module.exports = mongoose.model('account', Account);
+module.exports = mongoose.model('accounts', Account);
