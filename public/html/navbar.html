@@ -1,0 +1,57 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+<!--        <div layout="row" layout-wrap style=" background-color: #2b542c;" >
+            <div style="background-color: #F0F0F0;" flex="25">
+                <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+            </div>
+            <div style="background-color: #F0F0F0;" flex="25">
+                <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+            </div>
+            <div style="background-color: #F0F0F0;" flex="25">
+                <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+            </div>
+            <div style="background-color: #F0F0F0;" flex="25">
+                <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+            </div>
+&lt;!&ndash;            <div style="background-color: #8a6d3b;" flex="220">[flex=80]</div>&ndash;&gt;
+        </div>
+    </div>
+</md-toolbar>-->
+        <div id="logoimg"><img style="position: absolute;" class = "logo" src="../images/velo.png"><div style="font-family: Helvetica; width:158px; margin-left: 45px;margin-top: 6px; color: #5F6464
+        ; font-size: 19px;">SKYLOCK FLEET</div></div>
+        <div class="responsive" style="">
+        <md-button style="color: #585858;" class="md-button md-ink-ripple" ui-sref="charts" type="button" ng-transclude="" aria-label="DASHBOARD"><span id="headclick" class="ng-scope">
+          DASHBOARD
+        </span><div class="md-ripple-container"></div></md-button>
+        <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" ui-sref="mapbox" type="button" ng-transclude="" aria-label="DASHBOARD"><span id="headclick" class="ng-scope">
+          ANALYTICS
+        </span><div class="md-ripple-container"></div></md-button>
+        <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD"><span id="headclick" class="ng-scope">
+          REPORTS
+        </span><div class="md-ripple-container"></div></md-button>
+        <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD"><span id="headclick" class="ng-scope">
+          MAINTANENCE
+        </span><div class="md-ripple-container"></div></md-button>
+        <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD"><span id="headclick" class="ng-scope">
+          SALES
+        </span><div class="md-ripple-container"></div></md-button>
+            </div>
+        <img class="ava" src="../images/masknormal.png">
+        <div class="dropdown">
+        <md-button style="color: #585858;" class="md-button md-ink-ripple dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="ng-scope">Jack</span><div class="md-ripple-container"></div>
+        </md-button>
+        <ul style="background-color: #526C87;" class="dropdown-menu" aria-labelledby="dropdownMenu2" >
+            <li><a href="/#/logout" ng-click="logout()">Log out</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Contact Form</a></li>
+        </ul>
+        </div>
+    </div>
+</md-toolbar>
+<script>
+    $('#logoimg').click(function(){
+        window.open('https://www.skylock.cc', '_blank');
+    });
+
+</script>

@@ -1,0 +1,272 @@
+<div style="width: 100%; padding: 10px; height: 46px; background-color: #F0F0F0; margin: auto; ">
+    <button class="subBar" aria-label="Left Align" ui-sref=".rentalSupply">
+        <span aria-hidden="true">Rental supply</span>
+    </button>
+    <button type="button" class="subBar" aria-label="Left Align" ui-sref=".rentalDemand">
+        <span aria-hidden="true">Rental demand</span>
+    </button>
+    <button type="button" class="subBar" aria-label="Left Align" ui-sref=".unmetDemand">
+        <span aria-hidden="true">Unmet demand</span>
+    </button>
+    <button type="button" class="subBar" aria-label="Left Align" ui-sref=".appAreas">
+        <span aria-hidden="true">App opening areas</span>
+    </button>       
+    <button type="button" class="subBar" aria-label="Left Align" ui-sref=".bikeInVersusOut">
+        <span aria-hidden="true">Bike in versus out</span>
+    </button>
+
+</div>
+
+<div ui-view></div>
+
+
+
+
+<!--<div style="font-family:ProximanovaSemiBold; font-size:12px; width:100%; height:450px;" ng-controller="trendsAndPatternsController">
+    <div style="width:33%; height:450px; background-color:red; padding:40px; float:right;">
+        <div style="background-color:aliceblue; width:100%; height:70px; margin-bottom:90px;">
+            <div style="margin-left:20px;" class="form-group input-group dateInput">
+                <label class="input-group-btn" for="date-fld1">
+                    <span style="padding: 3px;" class="btn btn-default">
+                        <span style="font-size: 14px;" class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </label>
+                <input style="width: 68px; height: 28px; font-size: 9px; padding: 6px;" type="text" class="form-control date-input" id="date-fld1" value="{{today}}" />
+            </div>
+            <div class="bootstrap-timepicker">
+                <input id="timepicker" type="text" class="input-small">
+                <label class="input-group-btn" for="timepicker">
+                    <span style="padding: 3px;" class="btn btn-default">
+                        <span style="font-size: 14px;" class="glyphicon glyphicon-time"></span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="table" style="float:right; width:83%; height:179px; border:solid; border-color:#000000;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="4">Relevant markers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><md-checkbox ng-model="data.cb2" aria-label=""></md-checkbox></td>
+                        <td><div style=" width:15px; height:20px; background-color:#000000;"></td>
+                        <td style="padding-top:10px;">ACTIVE BIKES</td>
+                        <td style="padding-top:10px;">1256</td>
+                    </tr>
+                    <tr>
+                        <td><md-checkbox ng-model="data.cb3" aria-label=""></md-checkbox></td>
+                        <td><div style="width:15px; height:20px; background-color:#000000;"></td>
+                        <td style="padding-top:10px;">PARKED BIKES</td>
+                        <td style="padding-top:10px;">386</td>
+                    </tr>
+                    <tr>
+                        <td><md-checkbox style="margin-top:5px;" ng-model="data.cb4" aria-label=""></md-checkbox></td>
+                        <td><div style="margin-top:6px; width:15px; height:20px; background-color:#000000;"></div></td>
+                        <td style="padding-top:10px;">BIKES IDLE MORE THAN 5 DAYS</td>
+                        <td style="padding-top:10px;">24</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="map" style="width :67%; height: 450px; position:relative;"></div>
+    
+    <div id="accor" style="width:280px; bottom:440px; position:relative; float:left;" class="container">
+        <div class="panel panel-default" style="border:none; box-shadow:none">
+            <a style="color:black;" ng-click="arrowRot()" data-toggle="collapse" href="#/list#collapsea">
+                <div class="panel-heading" style="padding-left:22px; padding-right:22px;">
+                    <h4 class="panel-title">
+                        TRIP FILTERS
+                        <span style="float:right;" class="glyphicon glyphicon-chevron-down"></span>
+                    </h4>
+                </div>
+            </a>
+            <div id="collapsea" class="panel-collapse collapse">
+                <div class="panel-body" style="padding-top:5px; padding-left:22px; padding-right:22px;">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default" style="border-style: solid; border-radius:unset; border-bottom-color:#CFCECE; border-width: 1px 0px 1px 0px; box-shadow:none">
+                            <a style="color:black;" data-toggle="collapse" data-parent="#accordion" href="#/list#collapse1">
+                                <div class="panel-heading" style="padding:15px 0px 15px 0px;">
+                                    <h4 class="panel-title">
+                                        Date and time
+                                        <span style="float:right;" class="glyphicon glyphicon-chevron-down"></span>
+                                    </h4>
+                                </div>
+                            </a>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body" style="padding-top:0px; padding-left:0px; padding-right:0px;">
+                                    <p class="heaD">Time of day</p>
+                                    <div style="margin-bottom:18px;">
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:5px; padding:2px 5px 2px 5px;" id="tesT" ng-click="dayClick()" ng-init="dayFilter=false" type="button" class="btn btn-default">Day</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:5px; padding:2px 5px 2px 5px;" id="tesT1" ng-click="nightClick()" ng-init="nightFilter=false" type="button" class="btn btn-default">Night</button><br />
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px; padding:2px 5px 2px 5px;" ara" id="tesT2" ng-click="amClick()" ng-init="peakAMFilter=false" type="button" class="btn btn-default">Peak am</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px; padding:2px 5px 2px 5px;" id="tesT3" ng-click="pmClick()" ng-init="peakPMFilter=false" type="button" class="btn btn-default">Peak pm</button>
+                                    </div>
+                                    <p class="heaD">Time</p>
+                                    <div style="margin-bottom:10px;" range-slider min="0" max="100" model-min="bike.min" model-max="bike.max" disabled="false"></div>
+                                    <div style="margin-bottom: 20px;">
+                                        <div style="display:inline-flex">
+                                            <input style="font-size:11px; font-family:SanFransisco; width:26px; height:26px; padding:6px; margin-right:10px;" type="text" class="form-control" value="{{bike.min}}"><p style="margin-top:auto; margin-bottom:auto;">to</p>
+                                            <input style="font-size:11px; font-family:SanFransisco; width:26px; height:26px; padding:6px; margin-left:10px;" type="text" class="form-control" value="{{bike.max}}">
+                                        </div>
+                                    </div>
+                                    <p class="heaD">Day</p>
+                                    <div style="margin-bottom:20px;">
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" id="monday" ng-click="monClick()" type="button" ng-init="mon=false" class="btn btn-default">M</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" id="tue" ng-click="tueClick()" type="button" ng-init="Tue=false" class="btn btn-default">T</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" n id="wed" ng-click="wedClick()" type="button" ng-init="Wed=false" class="btn btn-default">W</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" id="thu" ng-click="thurClick()" type="button" ng-init="Thu=false" class="btn btn-default">T</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" id="fri" ng-click="friClick()" type="button" ng-init="Fri=false" class="btn btn-default">F</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" id="sat" ng-click="satClick()" type="button" ng-init="Sat=false" class="btn btn-default">S</button>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px;padding:2px 5px 2px 5px;" id="sun" ng-click="sunClick()" type="button" ng-init="Sun=false" class="btn btn-default">S</button>
+                                    </div>
+                                    <p class="heaD">Month</p>
+                                    <div style="margin-bottom:10px;">
+                                        <button id="jan" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="janClick()" ng-init="Jan=false" type="button" class="btn btn-default">J</button>
+                                        <button id="feb" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="febClick()" ng-init="Feb=false" type="button" class="btn btn-default">F</button>
+                                        <button id="mar" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="marClick()" ng-init="Mar=false" type="button" class="btn btn-default">M</button>
+                                        <button id="apr" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="aprClick()" ng-init="Apr=false" type="button" class="btn btn-default">A</button>
+                                        <button id="may" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="mayClick()" ng-init="May=false" type="button" class="btn btn-default">M</button>
+                                        <button id="jun" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="junClick()" ng-init="Jun=false" type="button" class="btn btn-default">J</button><br />
+                                        <button id="jul" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="julClick()" ng-init="Jul=false" type="button" class="btn btn-default">J</button>
+                                        <button id="aug" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="augClick()" ng-init="Aug=false" type="button" class="btn btn-default">A</button>
+                                        <button id="sep" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="sepClick()" ng-init="Sep=false" type="button" class="btn btn-default">S</button>
+                                        <button id="oct" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="octClick()" ng-init="Oct=false" type="button" class="btn btn-default">O</button>
+                                        <button id="nov" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="novClick()" ng-init="Nov=false" type="button" class="btn btn-default">N</button>
+                                        <button id="dec" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="decClick()" ng-init="Dec=false" type="button" class="btn btn-default">D</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="border-style: solid; border-radius:unset; border-bottom-color:#CFCECE; border-width: 0px 0px 1px 0px; box-shadow:none">
+                            <a style="color:black;" data-toggle="collapse" data-parent="#accordion" href="#/list#collapse2">
+                                <div class="panel-heading" style="padding:15px 0px 15px 0px;">
+                                    <h4 class="panel-title">
+                                        Rider info
+                                        <span style="float:right;" class="glyphicon glyphicon-chevron-down"></span>
+                                    </h4>
+                                </div>
+                            </a>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body" style="padding-top:0px; padding-left:0px; padding-right:0px;">
+                                    <p class="heaD">Gender</p>
+                                    <div>
+                                        <button id="ma" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="maClick()" ng-init="Ma=false" type="button" class="btn btn-default">M</button>
+                                        <button id="fe" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="feClick()" ng-init="Fe=false" type="button" class="btn btn-default">F</button>
+                                    </div>
+                                    <p class="heaD">Rider age</p>
+                                    <div style="margin-bottom:10px;" range-slider min="0" max="100" model-min="bike.min" model-max="bike.max" disabled="false"></div>
+                                    <div style="margin-bottom: 20px;">
+                                        <div style="display:inline-flex">
+                                            <button id="tesTs" style="font-size:11px; font-family:SanFransisco; " ng-click="butClick()" type="button" class="btn btn-default">all ages</button>
+                                        </div>
+                                    </div>
+                                    <p class="heaD">Rider type</p>
+                                    <div>
+                                        <button style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" id="mem" ng-click="memClick()" ng-init="Mem=false" type="button" class="btn btn-default">Member</button>
+                                        <button id="cas" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-click="casClick()" ng-init="Cas=false" type="button" class="btn btn-default">Casual rider</button>
+                                    </div>
+                                    <p class="heaD">Customer name</p>
+
+                                    <div class="dropdown">
+                                        <div class="input-group">
+                                            <button style="font-size:11px; font-family:SanFransisco; padding:0px 0px 0px 5px; width:208px; text-align:left;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                Select customer
+                                                <span class="input-group-addon glyphicon glyphicon-chevron-down" style="border:1px solid transparent; top:0px; width:20px; height:22px; padding:4px; margin-left:103px; font-size:11px; display:inline-block; border-radius:0px 5px 0px 5px; background-color:#EEEEEE;"></span>
+                                            </button>
+                                            <ul style="background-color:#EEEEEE; font-size:12px; width:208px;" class="dropdown-menu">
+                                                <li><a id="lisa" href="">Jonathan Smith</a></li>
+                                                <li><a id="lisa" href="">Will Smith</a></li>
+                                                <li><a id="lisa" href="">Di Carpio</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="border-style: solid; border-radius:unset; border-bottom-color:#CFCECE; border-width: 0px 0px 1px 0px; box-shadow:none">
+                            <a style="color:black;" data-toggle="collapse" data-parent="#accordion" href="#/list#collapse3">
+                                <div class="panel-heading" style="padding:15px 0px 15px 0px;">
+                                    <h4 class="panel-title">
+                                        Trip info
+                                        <span style="float:right;" class="glyphicon glyphicon-chevron-down"></span>
+                                    </h4>
+                                </div>
+                            </a>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body" style="padding-top:0px; padding-left:0px; padding-right:0px;">
+                                    <p class="heaD">Trip duration</p>
+                                    <div style="margin-bottom:10px;" range-slider min="1" max="24" model-min="bike1.min" model-max="bike1.max" disabled="false"></div>
+                                    <div style="margin-bottom: 20px;">
+                                        <div style="display:inline-flex">
+                                            <button id="dur" style="font-size:11px; font-family:SanFransisco; " ng-click="durClick()" ng-init="Dur=false" type="button" class="btn btn-default">All durations</button>
+                                        </div>
+                                    </div>
+                                    <p class="heaD">Trip length</p>
+                                    <div style="margin-bottom:10px;" range-slider min="1" max="10" model-min="bike2.min" model-max="bike2.max" disabled="false"></div>
+                                    <div style="margin-bottom: 20px;">
+                                        <div style="display:inline-flex">
+                                            <button id="miles" style="font-size:11px; font-family:SanFransisco; margin-right:8px; margin-bottom:8px; padding:2px 8px 2px 8px;" ng-init="Miles=false" ng-click="milesClick()" type="button" class="btn btn-default">Up to 5 miles</button>
+                                        </div>
+                                    </div>
+                                    <p class="heaD">Pick up location</p>
+                                    <div class="dropdown" style="margin-top:2px; margin-bottom:12px;">
+                                        <div class="input-group">
+                                            <button style="font-size:11px; font-family:SanFransisco; padding:0px 0px 0px 5px; width:208px; text-align:left;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                Select customer
+                                                <span class="input-group-addon glyphicon glyphicon-chevron-down" style="border:1px solid transparent; top:0px; width:20px; height:22px; padding:4px; margin-left:103px; font-size:11px; display:inline-block; border-radius:0px 5px 0px 5px; background-color:#EEEEEE;"></span>
+                                            </button>
+                                            <ul style="background-color:#EEEEEE; font-size:12px; width:208px;" class="dropdown-menu">
+                                                <li><a id="lisa" href="">Jonathan Smith</a></li>
+                                                <li><a id="lisa" href="">Will Smith</a></li>
+                                                <li><a id="lisa" href="">Di Carpio</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="heaD">Drop off location</p>
+                                    <div class="dropdown" style="margin-top:2px; margin-bottom:12px;">
+                                        <div class="input-group">
+                                            <button style="font-size:11px; font-family:SanFransisco; padding:0px 0px 0px 5px; width:208px; text-align:left;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                Select customer
+                                                <span class="input-group-addon glyphicon glyphicon-chevron-down" style="border:1px solid transparent; top:0px; width:20px; height:22px; padding:4px; margin-left:103px; font-size:11px; display:inline-block; border-radius:0px 5px 0px 5px; background-color:#EEEEEE;"></span>
+                                            </button>
+                                            <ul style="background-color:#EEEEEE;width:208px; font-size:12px;" class="dropdown-menu">
+                                                <li><a id="lisa" href="">Jonathan Smith</a></li>
+                                                <li><a id="lisa" href="">Will Smith</a></li>
+                                                <li><a id="lisa" href="">Di Carpio</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="heaD">Show a specific bike</p>
+                                    <div class="dropdown" style="margin-top:2px; margin-bottom:12px;">
+                                        <div class="input-group">
+                                            <button style="font-size:11px; font-family:SanFransisco; padding:0px 0px 0px 5px; width:208px; text-align:left;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                Select customer
+                                                <span class="input-group-addon glyphicon glyphicon-chevron-down" style="border:1px solid transparent; top:0px; width:20px; height:22px; padding:4px; margin-left:103px; font-size:11px; display:inline-block; border-radius:0px 5px 0px 5px; background-color:#EEEEEE;"></span>
+                                            </button>
+                                            <ul style="background-color:#EEEEEE; font-size:12px; width:208px;" class="dropdown-menu">
+                                                <li><a id="lisa" href="">Jonathan Smith</a></li>
+                                                <li><a id="lisa" href="">Will Smith</a></li>
+                                                <li><a id="lisa" href="">Di Carpio</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-left:17px;">
+                        <button style="font-family:SanFransisco; background-color:#EAEAEA; color:#9B9B9B; padding:5px 15px; margin-right:25px;" id="tesTs" ng-click="butClick()" type="button" class="btn btn-default">Reset</button>
+                        <button style="font-family:SanFransisco;background-color:#66B1E3; color:#FFFFFF; padding:5px 15px;" id="tesTs" ng-click="butClick()" type="button" class="btn btn-default">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

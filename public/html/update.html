@@ -1,0 +1,42 @@
+<div class="container-fluid" ng-controller="updateController" ng-init="list()">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SkyRide</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="/#/list">List Bikes</a></li>
+                <li><a href="/#/insert">Insert New Bikes</a></li>
+                <li class="active"><a href="/#/update">Update Bike Location<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <form id="create" method="POST" ng-submit="update()">
+        <div class="input-group">
+            <span class="input-group-addon label-primary"  id="basic-addon3" style="color: white; width: 120px;">Bike - ID</span>
+            <input name="id" id="id" class="form-control" ng-model="id"/>
+            </div><br>
+        <div class="input-group">
+            <span class="input-group-addon label-primary" id="basic-addon3" style="color: white; width: 120px;">Latitude</span>
+            <input name="lat" id="lat" class="form-control" ng-model="lat"/>
+            </div><br>
+        <div class="input-group">
+            <span class="input-group-addon label-primary" id="basic-addon3" style="color: white; width: 120px;">Longitude</span>
+            <input name="long" id="long" class="form-control" ng-model="long"/>
+            </div><br>
+        <div class="input-group">
+            <span class="input-group-addon label-primary" id="basic-addon3" style="color: white; width: 120px;">Owner</span>
+            <input name="owner" id="owner" class="form-control" ng-model="owner"/>
+            </div><br><br>
+    <input class="btn btn-primary" type="submit" value="create"/>
+    </form>
+</div>

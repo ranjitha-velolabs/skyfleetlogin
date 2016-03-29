@@ -1,0 +1,298 @@
+@font-face {
+  font-family: Proximanova;
+  src: url(../fonts/proximanova-regular-webfont.woff);
+}
+@font-face {
+  font-family: ProximanovaBold;
+  src: url(../fonts/proximanova-bold-webfont.woff);
+}
+
+@font-face {
+  font-family: ProximanovaThin;
+  src: url(../fonts/proximanova-light-webfont.woff);
+}
+@font-face {
+  font-family: ProximanovaSemiBold;
+  src: url(../fonts/proximanova-semibold-webfont.woff);
+}
+@font-face {
+  font-family: SanFransisco;
+  src: url(../fonts/sanfranciscodisplay-regular-webfont.woff);
+}
+@font-face {
+  font-family: SanFransiscoSemiBold;
+  src: url(../fonts/sanfranciscodisplay-semibold-webfont.woff);
+}
+@font-face {
+  font-family: SanFransiscoBold;
+  src: url(../fonts/sanfranciscodisplay-bold-webfont.woff);
+}
+@font-face {
+  font-family: SanFransiscoThin;
+  src: url(../fonts/sanfranciscodisplay-thin-webfont.woff);
+}
+@font-face {
+  font-family: Helvetican;
+  src: url(../fonts/helveticaneue.woff);
+}
+.panel-title
+{
+    font-size:12px !important;
+}
+#tripI{
+    margin-top: 2px;
+    margin-bottom: 12px;
+}
+a
+{
+    text-decoration:none !important;
+}
+#accor{
+font-size:8px;
+}
+md-checkbox
+{
+ margin:0px;
+}
+md-checkbox.md-checked .md-icon:after
+{
+ width:4px;
+ height:9px;
+ left: 5px;
+ top:1px;
+}
+md-checkbox#white .md-icon
+{
+ border: 1px solid white;
+}
+md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon
+{
+ background-color: #BFBFBF ;
+}
+md-checkbox#blue.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon
+{
+ background-color: #4A5060 ;
+ border: 1px solid white;
+}
+.md-icon
+{
+ width:15px !important;
+ height:15px !important;
+}
+#tesTa
+{
+    margin-right:8px;
+    margin-bottom:5px;
+    padding:2px 5px 2px 5px;
+}
+#tesT
+{
+    margin-right:8px;
+    padding:2px 5px 2px 5px;
+}
+#lisa{
+    color:#000000 !important;
+}
+#tesTs
+{
+    margin-right:8px;
+    margin-bottom:8px;
+    padding:2px 8px 2px 8px;
+}
+.heaD
+{
+    text-align:left;
+    margin-bottom:2px;
+    font-size:11px;
+    color:#9B9B9B;
+}
+.responsive {
+  color: #585858;
+  width: 600px;
+  font-size: 12px;
+  margin-right: 110px;
+  margin-left: 80px;
+}
+body {
+    width: 1250px;
+  max-width: 1240px !important;
+  margin-left:auto !important; margin-right: auto !important; 
+  font-family: ProximanovaSemiBold;
+  background-color: #FFFFFF;
+  overflow: scroll;
+}
+.md-3-line:hover
+{
+  background-color: #f5f5f5;
+}
+.md-3-line:hover li
+{
+  color: #3A3E4C;
+}
+.dropdown-menu > li > a
+{
+  color: #F0F0F0 !important;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus
+{
+  color: #526c87 !important;
+}
+/* Material Toolbar */
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar)
+{
+  background-color: #F6F6F6;
+}
+#headclick:hover:active
+{
+  color: #5AA3E8;
+}
+.logo
+{
+  height: 40px;
+  margin-right: 8px;
+}
+.ava
+{
+  height: 35px;
+  border-radius: 50%;
+  border-color: #C5C7C9;
+  border-width: 100px;
+}
+
+md-toolbar
+{
+  height: 100px !important;
+  max-height: 120px !important;
+}
+md-pagination-wrapper
+{
+  left : 30%;
+  bottom: 0px;
+}
+md-content
+{
+  overflow: initial;
+}
+.md-padding{
+  padding: 0px !important;
+}
+md-tabs-canvas
+{
+  background-color: #4A5060;
+  height: 65px;
+}
+md-tab-item
+{
+  background-color: #526C87;
+}
+.subBar
+{
+  background-color: #F0F0F0;
+  border: none;
+  padding: 10px;
+  font-family: ProximanovaSemiBold;
+  font-size: 12px;
+  outline: none;
+}
+.subBar:active
+{
+  background-color: #ffffff;
+}
+.subBar:hover
+{
+  background-color: #ffffff;
+}
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{
+  background-color: #526D88 !important;
+}
+md-tabs.md-default-theme .md-tab, md-tabs .md-tab
+{
+  color: #F6F6F6 !important;
+}
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon
+{
+  background-color: #F6F6F6 !important;
+  color : #585858!important;
+}
+/* Material Toolbar */
+
+.leaflet-control-container
+{
+  display: none;
+}
+
+md-list-item.md-2-line .md-list-item-text, md-list-item.md-2-line>.md-no-style .md-list-item-text, md-list-item.md-3-line .md-list-item-text, md-list-item.md-3-line>.md-no-style .md-list-item-text
+{
+  padding : 7px 0;
+}
+
+.md-block .md-input-focused
+{
+  color:#009688;
+}
+md-input-container:not(.md-input-invalid).md-input-focused label {
+  color : #009688;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: #009688;
+
+}
+
+
+.scrollbar
+{
+  height: 413px;
+  overflow-y: auto;
+}
+
+.force-overflow
+{
+  min-height: 413px;
+}
+
+#wrapper
+{
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+/*
+ *  STYLE 1
+ */
+
+#style-1::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #DBD9D9;
+  border-radius: 5px;
+}
+
+#style-1::-webkit-scrollbar
+{
+  width: 10px;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  border-radius: 5px;
+  background-color: #526C87;
+}
+
+
+#loginContainer
+{
+    width: 1035px;
+    margin-left: 8%;
+    background-color: #F6F6F6 ;
+}
+
+
+
+@media (min-width: 960px) and (max-width: 1295px) {
+  .responsive{
+    margin-left: 27px;
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Skyfleet</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="../js/libs/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
+    <script src="http://danielcrisp.github.io/angular-rangeslider/angular.rangeSlider.js"></script>
+    <script src="../js/angular/angular-ui-router.js"></script>
+    <script src="../js/angular/angular-ui-router.min.js"></script>
+    <script src="../js/angular/angular-cookies.min.js"></script>
+    <script src="../js/angular/angular-translate.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/0.7.7/leaflet.js"></script>
+    <script src="../js/libs/leaflet.awesome-markers.js"></script>
+    <script src="http://tombatossals.github.io/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+    <script src="../js/angular/ng-table.js"></script>
+    <script src="../js/angular/ngStorage.min.js"></script>
+    <script src="../js/angular/ui-bootstrap-tpls.min.js"></script>
+    <script src="../js/angular/ui-jq.js"></script>
+    <script src="../js/angular/ui-load.js"></script>
+    <script src="../js/angular/angular.rangeSlider.js"></script>
+    <script src="../js/routes.js"></script>
+    <script src="../js/libs/Chart.js"></script>
+    <script src="../js/angular/angular-chart.js"></script>
+    <script src="../js/angular/angular-count-to.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-pip/v0.0.2/leaflet-pip.js'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
+    <!--  <script src="../js/libs/require.js"></script>-->
+    <script type="text/javascript" src="../js/libs/md-data-table.js"></script>
+    <link href="../stylesheets/md-data-table.css" rel="stylesheet" type="text/css"/>
+    <script src="../js/controllers/dashboardController.js"></script>
+    <script src="../js/controllers/homepageController.js"></script>
+    <script src="../js/controllers/insertController.js"></script>
+    <script src="../js/controllers/tripExplorerController.js"></script>
+    <script src="../js/controllers/updateController.js"></script>
+    <script src="../js/controllers/listController.js"></script>
+    <script src="../js/controllers/trendsAndPatternsController.js"></script>
+    <script src="../js/controllers/rentalSupplyController.js"></script>
+    <script src="../js/controllers/analyticsTabController.js"></script>
+    <script src="../js/libs/underscore.js"></script>
+    <script src="../js/libs/bootstrap-datepicker.js"></script>
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="../stylesheets/datepicker.css" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+    <script src="../js/angular/angular-cookies.js"></script>
+    <script src="../services/AuthService.js"></script>
+    <script src="../services/sessionservice.js"></script>
+    <script src="../js/controllers/loginController.js"></script>
+    <script src="../js/controllers/logoutController.js"></script>
+    <script src="../js/controllers/profileController.js"></script>
+    <script src="../js/controllers/registerController.js"></script>
+
+    <!--<script src="../js/libs/angular-mapbox.js"></script>-->
+    <script type="text/javascript" src="../js/libs/ang-accordion.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../stylesheets/angular-material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <!--<link rel="stylesheet" href="../stylesheets/mapbox.css"/>-->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/ang-accordion.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/angular.rangeSlider.css">
+    <link rel="stylesheet" href="../stylesheets/angular-chart.css">
+    <!--<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />-->
+    <!--    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--    <link rel="stylesheet" href="../stylesheets/leaflet.awesome-markers.css">-->
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../stylesheets/styles.css" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">-->
+    <script src="../js/libs/bootstrap-timepicker.js"></script>
+    <link href="../stylesheets/timepicker.css" rel="stylesheet">
+
+</head>
+<body ng-app="frontEndBackendTest">
+
+<md-toolbar>
+    <div class="md-toolbar-tools" ng-controller="loginController" ng-init="session()">
+        <!--        <div layout="row" layout-wrap style=" background-color: #2b542c;" >
+                    <div style="background-color: #F0F0F0;" flex="25">
+                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+                    </div>
+                    <div style="background-color: #F0F0F0;" flex="25">
+                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+                    </div>
+                    <div style="background-color: #F0F0F0;" flex="25">
+                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+                    </div>
+                    <div style="background-color: #F0F0F0;" flex="25">
+                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
+                    </div>
+        &lt;!&ndash;            <div style="background-color: #8a6d3b;" flex="220">[flex=80]</div>&ndash;&gt;
+                </div>
+            </div>
+        </md-toolbar>-->
+        <div id="logoimg">
+            <img style="position: absolute;" class="logo" src="../images/velo.png"><div style="font-family: Helvetica; width:158px; margin-left: 45px;margin-top: 6px; color: #5F6464
+        ; font-size: 19px;">SKYLOCK FLEET</div>
+        </div>
+        <div style="display: -webkit-inline-box; width: 280px; margin-left: 700px;" ng-show ="!tabs"><p style="font-size: 18px; padding-right: 20PX; margin-top: 16px;"> {{desc}}</p>
+            <button style="margin-top: 10px;" class="btn btn-default" ng-click="stateChange()"> {{btnq}}</button>
+        </div>
+        <div class="responsive" style=""  ng-show="tabs">
+            <md-button style="color: #585858;" class="md-button md-ink-ripple" ui-sref="dashboard" type="button" ng-transclude="" aria-label="DASHBOARD">
+                    <span id="headclick" class="ng-scope">
+                        DASHBOARD
+                    </span><div class="md-ripple-container"></div>
+            </md-button>
+            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" ui-sref="analytics" type="button" ng-transclude="" aria-label="DASHBOARD">
+                    <span id="headclick" class="ng-scope">
+                        ANALYTICS
+                    </span><div class="md-ripple-container"></div>
+            </md-button>
+            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD">
+                    <span id="headclick" class="ng-scope">
+                        REPORTS
+                    </span><div class="md-ripple-container"></div>
+            </md-button>
+            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD">
+                    <span id="headclick" class="ng-scope">
+                        MAINTANENCE
+                    </span><div class="md-ripple-container"></div>
+            </md-button>
+            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD">
+                    <span id="headclick" class="ng-scope">
+                        SALES
+                    </span><div class="md-ripple-container"></div>
+            </md-button>
+        </div>
+        <img class="ava" src="../images/masknormal.png"  ng-show="tabs">
+        <div class="dropdown"  ng-show="tabs">
+            <md-button style="color: #585858;" class="md-button md-ink-ripple dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="ng-scope">{{Name}}</span><div class="md-ripple-container"></div>
+            </md-button>
+            <ul style="background-color: #526C87;" class="dropdown-menu" aria-labelledby="dropdownMenu2"  ng-show="tabs" ng-controller="logoutController">
+                <li><a href="/#/logout" ng-click="logout()">Log out</a></li>
+                <li><a href="">Settings</a></li>
+                <li><a href="">Contact Form</a></li>
+            </ul>
+        </div>
+    </div>
+</md-toolbar>
+<script>
+    $('#logoimg').click(function(){
+
+        window.open('https://www.skylock.cc', '_blank');
+    });
+
+</script>
+
+
+
+<div ui-view></div>
+</body>
+</html>

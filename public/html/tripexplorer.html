@@ -1,0 +1,131 @@
+
+
+<div ng-controller="tripExplorerController" xmlns="http://www.w3.org/1999/html">
+    <div layout="row" style="color: #BFBFBF; height: 50px; font-family: SanFransisco; background-color: #F0F0F0; padding-top: 12px;">
+        <div flex="15" style="height: 35px; /*width: 120px; margin-left: 20px; margin-right: 20px; display: -webkit-inline-box;*/"><p style="font-size: 20px; /*position: absolute;top: 11px;*/">25 trips found</p></div>
+        <div flex="55" class="dropdown" style="color:#585858; font-family: ProximanovaSemiBold; bottom:10px; /*display: -webkit-inline-box; margin-right: 350px;*/">
+            <md-button class="md-button md-ink-ripple dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span style="font-size: 14px;" class="ng-scope">Showing trips in the last week</span><div class="md-ripple-container"></div>
+            </md-button>
+            <ul style="background-color: #526C87;" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a href="">Last day</a></li>
+                <li><a href="">Last week</a></li>
+                <li><a href="">Last month</a></li>
+                <li><a href="">Custom date range</a></li>
+            </ul>
+        </div>
+        <div flex="6" style="color: #BFBFBF; height: 35px; /*width: 110px; display: -webkit-inline-box;*/"><p style=" font-size: 36px; /*position: absolute;top: 12px;*/ line-height: 14px;">25<br><span style="font-size: 10px;">TRIPS</span></p></div>
+        <div flex="6" style="color: #BFBFBF; height: 35px; /*width: 110px; display: -webkit-inline-box;*/"><p style=" font-size: 36px; /*position: absolute;top: 12px;*/ line-height: 14px;">125<br><span style="font-size: 10px;">MILES</span></p></div>
+        <div flex="10" style="color: #BFBFBF; height: 35px; /*width: 125px; display: -webkit-inline-box;*/"><p style=" font-size: 36px; /*position: absolute;top: 12px;*/ line-height: 14px;">02:12<br><span style="font-size: 10px;">AVERAGE DURATION</span></p></div>
+        <div flex="6"style="color: #BFBFBF; height: 35px; /*width: 125px; display: -webkit-inline-box;*/"><p style=" font-size: 36px; /*position: absolute;top: 12px;*/ line-height: 14px;">3.24<br><span style="font-size: 10px;">AVERAGE LENGTH</span></p></div>
+<!--            <span>
+                25 Rides Found
+            </span>
+            <span style="margin-left: 761px;">
+                25
+            </span>
+            <span style="margin-left: 49px;">
+                100
+            </span>
+            <span style="margin-left: 50px;">
+                00:01
+            </span>
+            <span style="margin-left: 80px;">
+                3.00 mi
+            </span><br>
+                    <span>
+
+            </span>
+            <span style="margin-left: 853px;">
+                Trips
+            </span>
+            <span style="margin-left: 41px;">
+                Miles
+            </span>
+            <span style="margin-left: 26px;">
+                Average Duration
+            </span>
+            <span style="margin-left: 14px;">
+                Average Length
+            </span>-->
+        </div>
+    </div>
+<div id="map"></div>
+    <leaflet style="float: left; margin-bottom: 35px; position: relative;" lf-center="london" markers="fullMarkers" tiles="tiles" paths="fullPaths" defaults="defaults" width="100%" height="480px"></leaflet>
+    <ang-accordion style="width: 320px; margin-top: 10px; margin-left: 5px; float: left; position: absolute;" one-at-a-time="true" icon-position="right" close-icon-class="fa fa-chevron-right" open-icon-class="fa fa-chevron-down">
+
+        <collapsible-item item-title="TRIP FILTERS">
+
+            <form id="filters-form" >
+
+                <md-input-container>
+                    <label>Biker Name</label>
+                    <input name="clientName" ng-model="bike.name">
+
+                </md-input-container>
+                <md-container class="md-block">
+                    <label>Age</label>
+                    <div range-slider min="0" max="100" model-min="bike.min" model-max="bike.max" disabled="false"></div>
+                    <div style="margin-bottom: 20px;">
+                        From:     {{bike.min}} To: {{bike.max}}</div>
+                </md-container>
+
+                <md-container class="md-block">
+                    <div><label>Gender</label></div>
+                    <div style="margin-left: auto;margin-right: auto;">
+                        <div class="row" style="margin-left: auto;margin-right: auto;">
+                            <div class="col-xs-6">
+                                <img ng-click="male()" class="m" style="width: 55px; padding: 10px; margin-top: 15px; margin-bottom: 25px;" src="../images/men.svg">
+                            </div>
+                            <div class="col-xs-6">
+                                <img ng-click="female()" class="f" style="width: 55px; padding: 10px; margin-top: 15px; margin-bottom: 25px;" src="../images/women.svg">
+                            </div>
+                        </div>
+                    </div>
+                </md-container >
+                <md-button class="md-raised" type="cancel"> Update </md-button>
+                <md-button class="md-raised" ng-click="rese()" style="margin-bottom: 40px;"> Reset </md-button>
+            </form>
+
+
+        </collapsible-item>
+    </ang-accordion>
+
+    <md-input-container style="width: 400px;float: left; position: absolute; right:0px;height: 508px;">
+
+        <md-toolbar style="background-color: #526C87;">
+            <h2 class="md-toolbar-tools">
+                <span style="color: #f5f5f5;">Trip History</span>
+            </h2>
+        </md-toolbar>
+
+        <md-content style="background-color: #526C87;">
+            <md-list>
+                <div class="scrollbar" id="style-1">
+                    <div class="force-overflow">
+                        <md-list-item class="md-3-line" ng-repeat="item in geoJson.rides" ng-mouseover="hoverIn($index)" ng-mouseleave="hoverOut($index)">
+                            <img id="avatar" style="margin-top: auto; width: 45px; margin-bottom: auto;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;" ng-src="../images/mask{{item.rideinfo.avatarImg}}.png" class="Mask" alt="{{item.bikeinfo.rider}}">
+                            <div  id="scroll" class="md-list-item-text">
+                                <div style="float: left;margin-left: 23px;margin-right: 28px; width: 90px;">
+                                    <ul style="list-style: none; font-size: 12px; color: #f5f5f5; line-height: 20px; padding-left: 0px;" class="lis" >
+                                        <li>{{item.bikeinfo.rider}}</li>
+                                        <li>{{item.bikeinfo.age}}</li>
+                                        <li>{{item.bikeinfo.gender}}</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right; margin-right: 30px;">
+                                    <ul style="list-style: none; padding: 0px;font-size: 12px; color: #f5f5f5;line-height: 20px; text-align: right;">
+                                        <li>{{item.rideinfo.startplace}}&nbsp;,&nbsp;&nbsp;{{item.rideinfo.startTime}}<img ng-src="../images/side{{item.rideinfo.iconImg}}.png" style="position: absolute;" ></li>
+                                        <li>{{item.rideinfo.distance}}&nbsp;,&nbsp;&nbsp;{{item.rideinfo.duration}}</li>
+                                        <li>{{item.rideinfo.endplace}}&nbsp;,&nbsp;&nbsp;{{item.rideinfo.endTime}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <md-divider ng-if="!$last"></md-divider>
+                        </md-list-item>
+                    </div>
+                </div>
+            </md-list>
+        </md-content>
+    </md-input-container>
+</div>
