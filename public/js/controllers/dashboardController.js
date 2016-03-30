@@ -1,27 +1,33 @@
 
     var app = angular.module('frontEndBackendTest.controllers', ['chart.js','countTo','md.data.table','md.table.templates']);
-app.controller('dashboardController', ['$scope', '$timeout', function ($scope, $timeout) {
+app.controller('dashboardController', ['$scope', '$timeout','sessionservice','$location', function ($scope, $timeout,sessionservice,$location) {
 
 
-$scope.session = function () {
-       console.log("hell");
-       if(sessionservice.getCookieData() != undefined)
-       {
-           //$rootScope.dis = true;
-           console.log("hell");
-           $location.path('/Dashboard');
-       }
-       else
-       {
-           //$rootScope.dis = false;
-           /!​*$scope.setflag(1);*​!/
-           $location.path('/login');
-       }
 
-   }
 
-   $scope.session();
-        $('.date-input').datepicker({
+
+    $scope.session = function () {
+        console.log("hell");
+        if(sessionservice.getCookieData() != undefined)
+        {
+            //$rootScope.dis = true;
+            console.log("hell");
+            $location.path('/Dashboard');
+        }
+        else
+        {
+            //$rootScope.dis = false;
+            /!*$scope.setflag(1);*!/
+            $location.path('/login');
+        }
+
+    }
+
+    $scope.session();
+
+
+
+    $('.date-input').datepicker({
             autoclose: true,
             startDate: new Date(),
             dateFormat: 'dd-M-yy'
