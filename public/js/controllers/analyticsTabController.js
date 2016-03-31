@@ -2,12 +2,15 @@ angular.module('frontEndBackendTest.controllers')
 
 
     .controller('analyticsTabController', ['$scope', '$http', '$state','$localStorage','$rootScope','sessionservice','$location', function($scope, $http, $state,$localStorage, $rootScope,sessionservice,$location) {
+    $scope.dashClass = "dis";
+    $scope.analClass = "active";
 
+$rootScope.maps = 1;
 
         $state.go('.tripExplorer');
 
 
-        $scope.session = function () {
+        /*$scope.session = function () {
             console.log("hell");
             console.log("tripExplorer:"+sessionservice.getCookieData())
             if(sessionservice.getCookieData() != undefined)
@@ -25,6 +28,6 @@ angular.module('frontEndBackendTest.controllers')
 
         }
 
-        $scope.session();
+        $scope.session();*/
 
     }]);

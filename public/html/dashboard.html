@@ -17,7 +17,7 @@
                 </div>
             </md-toolbar>
 
-            <md-content style="background-color: #526C87 ;">
+            <md-content style="background-color: #526C87 ; z-index: 5000;">
                 <md-list>
                     <div class="scrollbar" id="style-1">
                         <div class="force-overflow">
@@ -319,3 +319,15 @@
 
       </div>
     <!--</div>-->
+    <style type="text/css">
+    .scrollbar
+    {
+      float: right;
+      overflow-y :auto;
+      height: 391px;
+    }
+    .leaflet-control-container
+    {
+      display: none;
+    }
+    </style>

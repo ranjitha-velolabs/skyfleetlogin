@@ -21,7 +21,11 @@ angular.module('frontEndBackendTest.controllers')
             max: 5
         };
 
- 
+ /*    $scope.dashClass = "dis";*/
+    $scope.analClass = "active";
+    $scope.tripEx = "dis";
+    $scope.trends = "active";
+    $scope.geo = "dis";
         $scope.dayClick = function () {
             var day = angular.element(document.querySelector('#tesT'));
             if ($scope.dayFilter == false) {

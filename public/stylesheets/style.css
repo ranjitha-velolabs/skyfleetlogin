@@ -146,18 +146,6 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 {
   color: #5AA3E8;
 }
-.logo
-{
-  height: 40px;
-  margin-right: 8px;
-}
-.ava
-{
-  height: 35px;
-  border-radius: 50%;
-  border-color: #C5C7C9;
-  border-width: 100px;
-}
 
 md-toolbar
 {
@@ -215,11 +203,6 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   color : #585858!important;
 }
 /* Material Toolbar */
-
-.leaflet-control-container
-{
-  display: none;
-}
 
 md-list-item.md-2-line .md-list-item-text, md-list-item.md-2-line>.md-no-style .md-list-item-text, md-list-item.md-3-line .md-list-item-text, md-list-item.md-3-line>.md-no-style .md-list-item-text
 {

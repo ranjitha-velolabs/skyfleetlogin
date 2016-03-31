@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Skyfleet</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+​
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+​
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="robots" content="noindex, nofollow" />
     <script src="../js/libs/jquery.min.js"></script>
@@ -54,10 +54,8 @@
     <script src="../js/libs/underscore.js"></script>
     <script src="../js/libs/bootstrap-datepicker.js"></script>
     <link href="../stylesheets/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="../stylesheets/datepicker.css" rel="stylesheet">
     <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
     <script src="../js/angular/angular-cookies.js"></script>
     <script src="../services/AuthService.js"></script>
@@ -66,12 +64,11 @@
     <script src="../js/controllers/logoutController.js"></script>
     <script src="../js/controllers/profileController.js"></script>
     <script src="../js/controllers/registerController.js"></script>
-
+​
     <!--<script src="../js/libs/angular-mapbox.js"></script>-->
     <script type="text/javascript" src="../js/libs/ang-accordion.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../stylesheets/angular-material.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/style.css"/>
     <!--<link rel="stylesheet" href="../stylesheets/mapbox.css"/>-->
     <link rel="stylesheet" type="text/css" href="../stylesheets/ang-accordion.css">
@@ -80,98 +77,60 @@
     <!--<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />-->
     <!--    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
     <!--    <link rel="stylesheet" href="../stylesheets/leaflet.awesome-markers.css">-->
-    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
     <link href="../stylesheets/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/newStyles.css" />
     <!--    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">-->
     <script src="../js/libs/bootstrap-timepicker.js"></script>
     <link href="../stylesheets/timepicker.css" rel="stylesheet">
-
+​
 </head>
 <body ng-app="frontEndBackendTest">
-
-<md-toolbar>
-    <div class="md-toolbar-tools" ng-controller="loginController" ng-init="session()">
-        <!--        <div layout="row" layout-wrap style=" background-color: #2b542c;" >
-                    <div style="background-color: #F0F0F0;" flex="25">
-                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
-                    </div>
-                    <div style="background-color: #F0F0F0;" flex="25">
-                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
-                    </div>
-                    <div style="background-color: #F0F0F0;" flex="25">
-                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
-                    </div>
-                    <div style="background-color: #F0F0F0;" flex="25">
-                        <img class = "logo" src="images/velo.PNG"><p style="font-family: Helvetica; margin: 0px;">SKYLOCK FLEET</p>
-                    </div>
-        &lt;!&ndash;            <div style="background-color: #8a6d3b;" flex="220">[flex=80]</div>&ndash;&gt;
-                </div>
-            </div>
-        </md-toolbar>-->
-        <div id="logoimg">
-            <img style="position: absolute;" class="logo" src="../images/velo.png"><div style="font-family: Helvetica; width:158px; margin-left: 45px;margin-top: 6px; color: #5F6464
-        ; font-size: 19px;">SKYLOCK FLEET</div>
-        </div>
-        <div style="display: -webkit-inline-box; width: 280px; margin-left: 700px;" ng-show ="!tabs"><p style="font-size: 18px; padding-right: 20PX; margin-top: 16px;"> {{desc}}</p>
-            <button style="margin-top: 10px;" class="btn btn-default" ng-click="stateChange()"> {{btnq}}</button>
-        </div>
-        <div class="responsive" style=""  ng-show="tabs">
-            <md-button style="color: #585858;" class="md-button md-ink-ripple" ui-sref="dashboard" type="button" ng-transclude="" aria-label="DASHBOARD">
-                    <span id="headclick" class="ng-scope">
-                        DASHBOARD
-                    </span><div class="md-ripple-container"></div>
-            </md-button>
-            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" ui-sref="analytics" type="button" ng-transclude="" aria-label="DASHBOARD">
-                    <span id="headclick" class="ng-scope">
-                        ANALYTICS
-                    </span><div class="md-ripple-container"></div>
-            </md-button>
-            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD">
-                    <span id="headclick" class="ng-scope">
-                        REPORTS
-                    </span><div class="md-ripple-container"></div>
-            </md-button>
-            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD">
-                    <span id="headclick" class="ng-scope">
-                        MAINTANENCE
-                    </span><div class="md-ripple-container"></div>
-            </md-button>
-            <md-button style="color: #585858;" id="1head" class="md-button md-ink-ripple" type="button" ng-transclude="" aria-label="DASHBOARD">
-                    <span id="headclick" class="ng-scope">
-                        SALES
-                    </span><div class="md-ripple-container"></div>
-            </md-button>
-        </div>
-        <img class="ava" src="../images/masknormal.png"  ng-show="tabs">
-        <div class="dropdown"  ng-show="tabs">
-            <md-button style="color: #585858;" class="md-button md-ink-ripple dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="ng-scope">{{Name}}</span><div class="md-ripple-container"></div>
-            </md-button>
-            <ul style="background-color: #526C87;" class="dropdown-menu" aria-labelledby="dropdownMenu2"  ng-show="tabs">
-                <li><a href="/#/logout" ng-click="logout()">Log out</a></li>
-                <li><a href="">Settings</a></li>
-                <li><a href="">Contact Form</a></li>
+<!---New Header-->
+​
+​
+<div class="nav-head" ng-controller="loginController" ng-init="session()">
+    <div class="logo-container">
+        <img class="logo" src="../images/velo.png"><div id="name-container">SKYLOCK FLEET</div>
+    </div>
+    <div style="display: -webkit-inline-box; width: 280px; margin-left: 620px;" ng-show ="!tabs"><p style="font-size: 18px; padding-right: 20PX; margin-top: 28px;"> {{desc}}</p>
+        <button style="margin-top: 23px;" class="btn btn-default" ng-click="stateChange()"> {{btnq}}</button>
+    </div>
+    <div class="navlist-container"  ng-show="tabs">
+        <button style="color:{{dashClass}}"ui-sref="dashboard" type="button" id="headButton" class="btn btn-default">DASHBOARD</button>
+        <button ui-sref="analytics" style="color:{{analClass}};" type="button" id="headButton" class="btn btn-default">ANALYTICS</button>
+        <button type="button" id="headButton" class="btn btn-default">REPORTS</button>
+        <button type="button" id="headButton" class="btn btn-default">MAINTANENCE</button>
+        <button type="button" id="headButton" class="btn btn-default">SALES</button>
+    </div>
+    <div class="avatar-container"  ng-show="tabs">
+        <img class="ava" src="../images/masknormal.png">
+        <div class="btn-group"  ng-show="tabs">
+            <button style="margin-left:-8px;" type="button" id="headButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{Name}} <span class="glyphicon glyphicon-menu-down"></span>
+            </button>
+            <ul style="background-color: #526C87;" class="dropdown-menu dropdown-menu-right" ng-show="tabs">
+                <li><a href="#" ng-click="logout()">Log out</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Contact Form</a></li>
             </ul>
         </div>
     </div>
-</md-toolbar>
+</div>
+​
+<!--New Header-->
 <script>
     $('#logoimg').click(function(){
-
+​
         window.open('https://www.skylock.cc', '_blank');
     });
-
+​
 </script>
-
-
-
+​
+​
+​
 <div ui-view></div>
-<md-content>
-    <md-toolbar style="background-color: #526C87">
-        <div class="md-toolbar-tools">
-            <img style="margin-top: 15px;" class = "logo" src="../images/velo_footer.png"><p style="margin-top:25px; font-family: ProximanovaThin; color: #9B9B9B; font-size: 28px;">SKYLOCK FLEET</p>
-        </div>
-    </md-toolbar>
-</md-content>
+<div class="foot">
+    <img class="fooLogo" src="../images/velo_footer.png"><p class="footLable">SKYLOCK FLEET</p>
+</div>
 </body>
 </html>

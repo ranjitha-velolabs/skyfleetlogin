@@ -1,9 +1,13 @@
 
     var app = angular.module('frontEndBackendTest.controllers', ['chart.js','countTo','md.data.table','md.table.templates']);
-app.controller('dashboardController', ['$scope', '$timeout','sessionservice','$location', function ($scope, $timeout,sessionservice,$location) {
+app.controller('dashboardController', ['$scope', '$timeout','sessionservice','$location','$rootScope', function ($scope, $timeout,sessionservice,$location,$rootScope) {
 
 
-
+    $rootScope.dashClass = "#5AA3E8";
+    $rootScope.analClass = "#00000";
+    $rootScope.tripEx = " ";
+    $rootScope.trends = " ";
+    $rootScope.geo = "dis";
 
 
     $scope.session = function () {
@@ -90,7 +94,8 @@ app.controller('dashboardController', ['$scope', '$timeout','sessionservice','$l
                                 type: 'xyz',
                                 options: {
                                     apikey: 'pk.eyJ1Ijoia2FydGhpY2tyYWoyMDE2IiwiYSI6ImNpa2VmdDRvNTAwNTd0cmx5ZDJrZHRkamgifQ.Zmlx4PXm0utEZ4PymHnZrA',
-                                        mapid: 'karthickraj2016.p3ne6nfo'
+                                        mapid: 'karthickraj2016.p3ne6nfo',
+                                        zoomControl: false
                                 }
                         },
 
